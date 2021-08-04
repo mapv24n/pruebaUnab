@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+	rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="principal">
+			<div>
+				<form class="form_show" th:action="@{/savePartidoEditado}"
+					th:object=${partidos} method="POST">
+					<fieldset class="form__fieldset">
+						<legend class="form__legend">Mostrar Partido</legend>
+						<div class="campos">
+						<input type="hidden" th:value="*{id}" >
+							<div class="campo">
+								<input class="campo__input" type="text" id="usuario"
+									name="usuario" required disabled th:value="*{usuario.nombre}"> <span></span>
+								<label class="campo__text_activo">Usuario</label>
+							</div>
+							<div class="campo">
+								<input class="campo__input" type="text" id="local" name="local"
+									required disabled th:value="*{local.nombre}"> <span></span> <label
+									class="campo__text_activo">Local</label>
+							</div>
+							<div class="campo">
+								<input class="campo__input" type="text" id="visitante"
+									name="visitante" disabled required th:value="*{visitante.nombre}">
+								<span></span> <label class="campo__text_activo">Visitante</label>
+							</div>
+							<div class="campo">
+								<input class="campo__input" type="text" id="fecha" name="fecha"
+									required disabled th:value="*{fecha}"> <span></span> <label
+									class="campo__text_activo">Fecha</label>
+							</div>
+							<div class="campo">
+								<input class="campo__input" type="text" id="goles_local"
+									name="goles_local" required th:value="*{goles_local}">
+								<span></span> <label class="campo__text_activo">Goles
+									Local</label>
+							</div>
+							<div class="campo">
+								<input class="campo__input" type="text" id="goles_visitante"
+									name="goles_visitante" required th:value="*{goles_visitante}">
+								<span></span> <label class="campo__text_activo">Goles
+									Visitante</label>
+							</div>
+						</div>
+						<div class="form__div_regresar" width="30px">
+							<div class="campoBoton_regresar">
+								<a href="index.html">
+									<button class="boton_regresar" type="submit" value="">
+										<label class="boton-mensaje-regresar" for=""><</label>
+									</button>
+								</a>
+							</div>
+						</div>
+						<div class="campoBoton">
+							<input class="boton" type="submit" value="GUARDAR">
+						</div>
+					</fieldset>
+				</form>
+
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>

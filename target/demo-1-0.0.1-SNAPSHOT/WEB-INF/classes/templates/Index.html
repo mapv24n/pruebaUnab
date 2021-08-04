@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+   <meta charset="ISO-8859-1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body onload="IniciarSecuencia()">   
+    <div class="container">
+        <div  class="principal">         
+            <img class="bicho" src="img/elbicho.jpg" alt="Secuencia" name="secuencia" width="400" height="518">          
+            <div>
+                 <form action="#" th:action="@{/login}" th:object=${user} method="POST">
+                    <fieldset class="form__fieldset">
+                        <legend class="form__legend">Login</legend>
+                        <div class="campos">
+                           
+                            <div class="campo_correo">
+                                <input class="campo__input" type="text" th:field="*{username}" required>   
+                                <span></span>
+                                <label class="campo__text">Usuario</label>
+                            </div>                        
+                            <div class="campo">
+                                <input class="campo__input submit" th:field="*{password}" type="password" required>    
+                                <span></span>
+                                <label class="campo__text">Contraseña</label>
+                            </div>
+                        </div>
+                        <div class="campoBoton">
+                            <input class="boton" type="submit" value="Login"> 
+                        </div>
+                    </fieldset>
+                </form>
+                
+            </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
+            <script src="sucesion.js"></script>
+        </div> 
+    </div> 
+</body>
+
+</html>

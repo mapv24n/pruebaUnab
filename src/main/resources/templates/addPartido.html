@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registrar Partidos</title>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+	rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="principal">
+			<div>
+				<form action="" class="form_addShow" th:action="@{/savePartido}"
+					th:object=${partidos} method="POST">
+					<fieldset class="form__fieldset">
+						<legend class="form__legend">Registrar Partidos</legend>
+						<div class="campos">
+							<div class="campo">
+								<label class="campo__text">Local</label> <span></span> <select
+									th:fiel="*{local}" id="local" name="local">
+									<option th:each="equipo:${equipos}" th:value="${equipo.id}"
+										th:text="${equipo.nombre}" />
+								</select>
+							</div>
+							<div class="campo">
+								<label class="campo__text">Visitante</label> <span></span> <select
+									th:fiel="*{visitante}" id="visitante" name="visitante">
+									<option th:each="equipo:${equipos}" th:value="${equipo.id}"
+										th:text="${equipo.nombre}" />
+								</select>
+							</div>
+							<div class="campo">
+								<input class="campo__input" th:fiel="*{fecha}" id="fecha"
+									name="fecha" type="date" required> <span></span> <label
+									class="campo__text">Fecha</label>
+							</div>
+						</div>
+						<div class="campoBoton">
+							<input class="boton" type="submit" value="REGISTRAR">
+						</div>
+					</fieldset>
+				</form>
+
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>
